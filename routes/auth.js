@@ -4,7 +4,7 @@ const passport = require('passport');
 // auth login
 
 routes.get('/login', (req, res)=>{
-    res.render('login')
+    res.render('login', {user:req.user})
 })
 
 
@@ -12,7 +12,8 @@ routes.get('/login', (req, res)=>{
 
 routes.get('/logout', (req, res)=>{
     // handle with passport
-    res.send('logout')
+    req.logout();
+    res.redirect('/')
 })
 
 
@@ -26,7 +27,7 @@ routes.get('/google', passport.authenticate('google', {
 // callback route for google to redirect
 
 routes.get('/google/redirect', passport.authenticate('google'),(req, res)=>{
-    res.send(req.user)
+    res.redirect('/profile/')
 })
 
 module.exports = routes;

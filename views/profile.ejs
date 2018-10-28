@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Oauth</title>
+    <title>Profile</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 
 </head>
@@ -14,16 +14,13 @@
                 <div class="nav-wrapper">
                   <a href="/" class="brand-logo">Oauth 2.0</a>
                   <ul id="nav-mobile" class="right hide-on-med-and-down">
-                   <% if(user) { %>
-                    <li><a href="/auth/logout">logout</a></li>
-                    <li><a href="/profile">Profile</a></li>
-                    <% } else { %>
-                    <li><a href="/auth/login">Login</a></li>
-                    <% }  %>
+                <li><a href="/auth/logout">logout</a></li>
                   </ul>
                 </div>
             </div>
               </nav>
+
+              <h2>Welcome to profile <%= user.username %></h2>
    
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
